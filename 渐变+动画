@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="">
+    <!---->
+    <style>
+        /*<!--css动画-->
+            1.rotate(1turn)
+              1turn：一圈，一个圆共一圈。   90deg = 0.25turn。
+        */
+        @keyframes spin{
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(1turn);
+            }
+        }
+        @keyframes spin-reverse{
+            from{
+                transform:rotate(1turn);
+            }
+        }
+        .circle {
+            width: 300px;
+            height: 300px;
+            border: 2px solid red;
+            border-radius: 50%;
+        }
+        .ballReverse {
+            border-radius: 100%;
+            width: 10px;
+            height: 10px;
+            font: bold 14px/50px Arial;
+            text-align: center;
+            background: yellowgreen;
+            perspective: 500px;
+            -webkit-perspective: 500px; /* Safari 和 Chrome */
+            /*须居中显示在调整索转的大小*/
+            margin: 0 auto;
+        }
+        .circle .ballReverse {
+            animation: spin-reverse 5s infinite linear ;
+            transform-origin: 50% -150px;
+        }
+        #app {
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+            border-radius: 50%;
+            margin: 50px 45px;
+        }
+        #app .ball {
+            animation: spin 3s infinite linear;
+            transform-origin: 50% 100px;
+        }
+        .box .ball {
+            border-radius: 100%;
+            width: 10px;
+            height: 10px;
+            font: bold 14px/50px Arial;
+            text-align: center;
+            background: blue;
+            /*须居中显示在调整索转的大小*/
+            margin: 0 auto;
+        }
+        h3 {
+            /*设置背景色为渐变*/
+            background-image: linear-gradient(to right, #b71623,#0a67fb);
+        }
+        h3>a {
+            /*设置文字为渐变颜色*/
+            background-image:-webkit-linear-gradient(right,red, #eefd4a, #109915);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+        .smallCircle {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #9000f5;
+            border-radius: 50%;
+            margin: 45px auto;
+        }
+        .smallCircleBall {
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+            font: bold 14px/50px Arial;
+            text-align: center;
+            background: #00aa00;
+            /*须居中显示在调整索转的大小*/
+            margin: 0 auto;
+        }
+        .smallCircle .smallCircleBall {
+            animation: spin 3s infinite linear;
+            transform-origin: 50%  50%;
+        }
+        /*正常定义得动画========================================*/
+        @keyframes move {
+            0% {
+                left: 0;
+                top: 10px;
+            }
+            50% {
+                left: 150px;
+                top: 10px;
+            }
+            100% {
+                left: 0;
+                top: 10px;
+            }
+        }
+        @keyframes move2 {
+            0% {
+                left: 160px;
+                bottom: 10px;
+            }
+           50% {
+               left: 10px;
+               bottom: 10px;
+           }
+            100% {
+                left: 160px;
+                bottom: 10px;
+            }
+        }
+        .line{
+            background:transparent;
+            width: 180px;
+            height: 60px;
+            border:3px transparent solid;
+            border-image:linear-gradient(to right, #991e17, #109915) 3 10;
+            position: relative;
+        }
+       .lineLeft {
+           width: 18px;
+           height: 2px;
+           background-color: #a71d2a;
+           position: absolute;
+           top: 5px;
+           left: 5px;
+       }
+        .lineRight {
+            width: 18px;
+            height: 1px;
+            background-color: #a71d2a;
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+        }
+        .line .lineLeft {
+            animation: move  3s  both infinite linear;
+            -webkit-animation:move  3s  infinite linear;
+        }
+        .line .lineRight {
+            animation: move2  3s both infinite linear;
+            -webkit-animation: move2  3s infinite linear;
+        }
+        /*====================================*/
+        .lineRound {
+            width: 200px;
+            height: 200px;
+            border: 3px solid;
+            border-image: -webkit-linear-gradient( red, blue) 10 10;
+            border-image: -moz-linear-gradient( red, blue) 10 10;
+            border-image: linear-gradient( red, blue) 10 10;
+            position: relative;
+        }
+        @keyframes rightRun {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate3d(200px,0,0);
+                opacity: 0;
+            }
+        }
+        @keyframes downRun {
+            0% {
+                transform: translate3d(0,0,0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate3d(0,180px,0);
+                opacity: 0;
+            }
+        }
+        @keyframes  leftRun {
+            0% {
+                transform: translate3d(180px,0,0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate3d(0,0,0);
+                opacity: 0;
+            }
+        }
+        @keyframes upRun {
+            0% {
+                transform: translate3d(0,180px,0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate3d(0,0,0);
+                opacity: 0;
+            }
+        }
+        .lineAnimateRound {
+            position: relative;
+        }
+        .lineRightRound,
+        .lineLeftRound{
+            background: transparent;
+            width: 20px;
+            border: 3px transparent solid;
+            /*border-radius: 10px;*/
+            /*边框圆角不再起作用*/
+            border-image: linear-gradient(to right, #eefd4a,#0abb80) 1 10;
+        }
+        .lineRightRound {
+            position: absolute;
+            top: 5px;
+        }
+        .lineLeftRound {
+            position: absolute;
+            bottom: 5px;
+        }
+        .lineDownRound,
+        .lineUpRound{
+            height: 20px;
+            border: 3px solid transparent;
+            /*边框圆角不再起作用*/
+            border-image: linear-gradient(to right, #eefd4a,#0abb80) 1 10;
+        }
+        .lineDownRound {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+        .lineUpRound {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+        }
+        .lineAnimateRound .lineRightRound {
+            animation: rightRun 2s infinite linear;
+        }
+        .lineAnimateRound .lineDownRound {
+             animation: downRun 2s infinite linear;
+         }
+        .lineAnimateRound .lineLeftRound {
+            animation: leftRun 2s infinite linear;
+        }
+        .lineAnimateRound .lineUpRound {
+            animation: upRun 2s infinite linear;
+        }
+    </style>
+</head>
+<body>
+<div class="animate">
+    <h3><a href="">css沿着圆走的动画</a></h3>
+    <div class="circle">
+        <div id="app" class="box">
+            <div class="ball"></div>
+            <div class="smallCircle">
+                <div class="smallCircleBall">ball</div>
+            </div>
+        </div>
+        <div class="ballReverse"></div>
+    </div>
+</div>
+
+<div class="lineAnimate">
+    <h3><a href="">css沿着边框线走的动画</a></h3>
+    <div class="line">
+        <div class="lineLeft"></div>
+        <div class="lineRight"></div>
+    </div>
+</div>
+
+<div class="lineAnimateRound">
+    <h3><a href="">css沿着边框线走的动画</a></h3>
+    <div class="lineRound">
+        <div class="lineRightRound"></div>
+        <div class="lineDownRound"></div>
+        <div class="lineLeftRound"></div>
+        <div class="lineUpRound"></div>
+    </div>
+</div>
+</body>
+</html>
