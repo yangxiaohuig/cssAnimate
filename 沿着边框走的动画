@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>沿着div边框走的动画2</title>
+    <!--<link rel="stylesheet" href="../../../resources/vendor/animate.css-master/animate.css">-->
+    <style>
+        body {
+            background-color: #ab1e1e;
+        }
+        .animateBtnline {
+            width: 200px;
+            height: 60px;
+            border: 1px solid #dea726;
+            margin: 10px 10px;
+        }
+        .animateBtnline {
+            position: relative;
+        }
+        .animateBtnline:before {
+            content: '';
+            background: #fff;
+            display: block;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            height: 1px;
+            width: 6%;
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: runLineL;
+            animation-name: runLineL;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+        }
+        .animateBtnline:after {
+            content: '';
+            background: rgba(255,255,255,0.8);
+            display: block;
+            position: absolute;
+            bottom: 14px;
+            left: 16px;
+            height: 1px;
+            width: 6%;
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: runLineR;
+            animation-name: runLineR;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+        }
+        @-webkit-keyframes runLineL {
+            0%{
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            50% {
+                -webkit-transform: translate3d(-110px, 0, 0);
+                transform: translate3d(-110px, 0, 0);
+            }
+            100%{
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @keyframes runLineL {
+            0%{
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            50% {
+                -webkit-transform: translate3d(-110px, 0, 0);
+                transform: translate3d(-110px, 0, 0);
+            }
+            100%{
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @-webkit-keyframes runLineR {
+            0%{
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            50% {
+                -webkit-transform: translate3d(165px, 0, 0);
+                transform: translate3d(110px, 0, 0);
+            }
+            100%{
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @keyframes runLineR {
+            0%{
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            50% {
+                -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(110px, 0, 0);
+            }
+            100%{
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+         <div class="animateBtnline"></div>
+         <div class="animateBtnline"></div>
+     <!--截取字符串中的标点符号-->
+     <!--nameStr = nameStr.replace(/[\-|\:|\ ]/g,'');-->
+</body>
+</html>
