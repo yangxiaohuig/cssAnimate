@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>360度旋转动画绕着圆旋转</title>
+    <style>
+        .Universal-Bav-icon {
+            font-size: 24px;
+            display: block;
+            width: 122px;
+            height: 122px;
+            line-height: 26px;
+            background: url(img/right-icon-unchecked.png)no-repeat center center;
+            color: #cafdff;
+            font-weight: 900;
+            padding: 28px 28px;
+        }
+        .Universal-Bav-icon i {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 60px;
+            left: 60px;
+            width: 5px;
+            height: 5px;
+            background: red;
+            border-radius: 50%;
+        }
+        @keyframes rotate {
+            0%{
+                -webkit-transform: rotate(0deg)
+            }
+            50%{
+                -webkit-transform: rotate(180deg)
+            }
+            100%{
+                -webkit-transform: rotate(360deg)
+            }
+        }
+        @-webkit-keyframes rotate {
+            0%{
+                -webkit-transform: rotate(0deg)
+            }
+            50%{
+                -webkit-transform: rotate(180deg)
+            }
+            100%{
+                -webkit-transform: rotate(360deg)
+            }
+        }
+        .rotate {
+            -webkit-animation-name: rotate;
+            animation-name: rotate;
+            transform-origin: 38px 38px;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+        }
+        .animated.slower {
+            -webkit-animation-duration: 6s;
+            animation-duration: 6s;
+        }
+    </style>
+</head>
+<body>
+     <span class="Universal-Bav-icon disaterInfo-icon">
+          <i class="animated rotate delay-3s slower"></i>
+     </span>
+
+</body>
+</html>
