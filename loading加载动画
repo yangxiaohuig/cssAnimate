@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loading加载动画</title>
+    <style>
+        h1 {
+            height: 40px;
+            background-image: linear-gradient(to right,#0a67fb,#00aa00,#a71d2a);
+        }
+        ul {
+            list-style: none;
+            display: flex;
+        }
+        .loading1 li {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: transparent;
+            margin-left: 20px;
+
+        }
+        .loading1 li {
+            animation: loading   3s  ease-out;
+            transform: scale(0);
+        }
+        .li1 {
+            -moz-animation-delay:0s; -webkit-animation-delay:0s;
+        }
+        .li2 {
+            -moz-animation-delay:5.5s; -webkit-animation-delay:5.5s;
+        }
+        .li3 {
+            -moz-animation-delay:6s; -webkit-animation-delay:6s;
+        }
+        .li4 {
+            -moz-animation-delay:9s; -webkit-animation-delay:9s;
+        }
+        @keyframes loading {
+            0% {
+                 transform: scale(0,0);
+                 background-color: #a71d2a;
+                 box-shadow: 2px 2px 2px 1px #9000f5,-2px -2px 2px 1px #9000f5;
+             }
+            50% {
+                transform: scale(0.5,0.5);
+                background-color: #a71d2a;
+                box-shadow: 2px 2px 2px 1px #557ff5,-2px -2px 2px 1px #557ff5;
+            }
+            100% {
+                transform: scale(1,1);
+                background-color: #a71d2a;
+                box-shadow: 2px 2px 2px 1px #eefd4a, -2px -2px 2px 1px #eefd4a;
+            }
+        }
+        .lineLoading {
+            width: 100%;
+            height: 2px;
+            background-color: transparent;
+            margin: 10px;
+            animation: loadingLIne 10s ease-out;
+
+        }
+        @keyframes loadingLIne {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+                background-color: #42b983;
+            }
+        }
+    </style>
+
+</head>
+<body>
+ <div class="loading1">
+     <h1>loading加载动画1</h1>
+     <button id="btn1">点击loading加载动画1</button>
+     <ul class="loadingUl">
+         <li class="li1"></li>
+         <li class="li2"></li>
+         <li class="li3"></li>
+         <li class="li4"></li>
+     </ul>
+ </div>
+
+ <div class="loading1">
+     <h1>loading加载动画2</h1>
+     <button id="btn2">点击loading加载动画1</button>
+     <div class="lineLoading"></div>
+ </div>
+
+ <script src="../../resources/vendor/jq/jquery-1.8.3.min.js"></script>
+ <script>
+     $('#btn').click(function () {
+         $('.loadingUl').removeClass('cur').delay(10).queue(function (next) {
+             $(this).addClass('cur');
+             next();
+         })
+     })
+ </script>
+</body>
+</html>
