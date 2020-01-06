@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>按钮的特殊颜色及动画</title>
+    <style>
+        .buttonAnimateRound,
+        .buttonAnimateRound {
+            height: 165px;
+        }
+        .buttonAnimateRound h2 {
+            height: 40px;
+            background-image: linear-gradient(to right, #a71d2a,#0a67fb,#0abebf);
+        }
+        .buttonAnimateRound h2 a {
+            color: yellowgreen;
+            text-decoration: none;
+        }
+       .lineRound button {
+            border: 3px solid;
+            width: 150px;
+            height: 40px;
+            border-image: linear-gradient(to right,#9000f5,#00aa00,#a71d2a) 3 10;
+            cursor: pointer;
+            animation: fause  1s  infinite  alternate;
+            background: #0a67fb;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        @keyframes fause {
+            0% {
+               margin-top: 0;
+            }
+            100% {
+                margin-top: 6px;
+            }
+        }
+        button:hover{
+            background: hsla(260,100%,80%,0.5);
+        }
+        .shineButton span{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            border-radius: 50%;
+            box-shadow: 2px 2px 3px  #a71d2a,  -2px -2px 3px  #00aa00;
+            animation: pluse 1s infinite linear alternate;
+        }
+        @keyframes pluse {
+            0% {
+                box-shadow:  2px 2px 3px #991e17,  -2px -2px 3px #00aa00;
+            }
+            50% {
+                box-shadow:  2px 2px 3px #2efb25,  -2px -2px 3px #eefd4a;
+            }
+            100% {
+                box-shadow:  2px 2px 3px #fb25b5,  -2px -2px 3px #361faa;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="buttonAnimateRound">
+    <h2><a href="">按钮动画</a></h2>
+    <div class="lineRound">
+      <button><span>点击</span></button>
+    </div>
+</div>
+
+<div class="buttonAnimateRound">
+    <h2><a href="">发光按钮</a></h2>
+    <div class="shineButton">
+        <span></span>
+    </div>
+</div>
+
+
+<div class="buttonAnimateRound">
+    <h2><a href="">发光按钮</a></h2>
+    1.hover.css
+    <!--
+    查看演示：
+    http://ianlunn.github.io/Hover/
+    github地址：
+    https://github.com/IanLunn/Hover
+    -->
+    2.Effect.css
+    <!--
+
+
+    -->
+    3.magic.css
+</div>
+
+</body>
+</html>
